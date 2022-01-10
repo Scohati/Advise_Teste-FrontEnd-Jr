@@ -140,6 +140,9 @@ body.darkActived {
   align-items: center;
 }
 .dark-search-box {
+  background-color: #f78f57;
+}
+.dark-search-box:hover {
   background-color: #ff5800;
 }
 .dark-search-box .search {
@@ -197,6 +200,7 @@ body.darkActived {
   align-items: start;
   border-bottom: 1px solid #bdbdbd;
   margin-bottom: 20px;
+  animation: aparece 1s;
 }
 .pokemons img {
   border: 1px solid black;
@@ -212,6 +216,15 @@ body.darkActived {
   max-width: 815px;
   font-size: 14px;
   line-height: 24px;
+}
+
+@keyframes aparece {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Paginação */
@@ -293,20 +306,10 @@ body.darkActived {
     text-align: center;
     border-bottom: 1px solid #bdbdbd;
     margin-bottom: 20px;
-    animation: aparece 1s;
   }
 
   .container-pokemons {
     animation: aparece 10s;
-  }
-
-  @keyframes aparece {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
   }
 
   .pokemons img {
