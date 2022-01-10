@@ -140,7 +140,7 @@ body.darkActived {
   align-items: center;
 }
 .dark-search-box {
-  background-color: #a2a2a2;
+  background-color: #ff5800;
 }
 .dark-search-box .search {
   color: #fff;
@@ -166,8 +166,9 @@ body.darkActived {
 }
 
 .icon-search {
-  width: 35px;
-  height: 35px;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
   cursor: pointer;
 }
 
