@@ -108,6 +108,6 @@ app.controller("Ctrl", function ($scope, $http) {
 
     setTimeout(() => {
         $scope.update()
-    }, 300);
+    }, 500);
 
 })
