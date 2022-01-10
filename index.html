@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd JR - Advise</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="./js/script.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body  class="container" ng-app="MyApp" ng-controller="Ctrl" ng-init="update()">
+    <header class="header">
+        <img src="./img/LOGO.png" alt="logo Advise" class="img-header">
+        <div class="dropdown">
+            <h3 ng-click="dropBtn()">Olá, Diogo <span class="seta">&#9662</span></h3>
+            <button class="dark-button hidden" ng-click="darkMode()"><span class="apagar">&#9681</span> Dark Mode</button>
+        </div>
+    </header>
+
+
+    <div ng-click="fecha()">
+        <div class="main-container">
+            <div class="barra-lateral"></div>
+
+            <section class="titulo-subtitulo-search">
+                <div class="textos">
+                    <h2>Fase teste prático Front_end</h2>
+                    <p>Pokebusca</p>
+                </div>
+                <div class="search-box">
+                    <input type="text" name="search" id="search" class="search" placeholder="Buscar">
+                    <img src="./img/icon.png" alt="icone" class="icon-search">
+                </div>
+            </section>
+
+            <div class="itemQtd">
+                <p>Exibindo {{perPage}} de {{totalItem}} itens</p>
+            </div>
+
+            <div class="container_pokemons" ng-init="update()">
+                <section class="pokemons" ng-init="update()">
+                    
+                </section>
+            </div>
+
+            <section class="navigation">
+                <span>{{state.page}} de {{state.totalPage}} páginas</span>
+                <div class="buttons">
+                    <button class="button" ng-click="goTo(1)"><img src="./img/first.png" alt="primeira página"></button>
+                    <button class="button" ng-click="prev()"><img src="./img/preve.png" alt="voltar página"></button>
+                    <button class="button" ng-click="next()"><img src="./img/next.png" alt="próxima página"></button>
+                    <button class="button" ng-click="goTo(100)"><img src="./img/last.png" alt="última página"></button>
+                </div>
+            </section>
+    
+        </div>
+        <footer class="footer"></footer>
+    </div>
+</body>
+
+</html>
