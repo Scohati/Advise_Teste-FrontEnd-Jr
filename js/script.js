@@ -11,7 +11,7 @@ app.controller("Ctrl", function ($scope, $http) {
         }
 
         $scope.data = Array.from({ length: $scope.dados.length }).map((_, i) =>
-            `   <section class="pokemons">
+            `<section class="pokemons">
              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${(i + 1)}.png" alt="pokemon-img">
              <div class="info">
                  <h4 class="nome-do-pokemon">${$scope.dados[i].name} #${(i + 1)}</h4>
@@ -36,6 +36,8 @@ app.controller("Ctrl", function ($scope, $http) {
                 $scope.state.page--;
             }
             $scope.update();
+            fazPopUp();
+
             document.body.scrollTop = document.documentElement.scrollTop = 200;
         }
 
@@ -45,6 +47,7 @@ app.controller("Ctrl", function ($scope, $http) {
                 $scope.state.page++;
             }
             $scope.update();
+            fazPopUp();
             document.body.scrollTop = document.documentElement.scrollTop = 200;
         }
 
@@ -57,6 +60,7 @@ app.controller("Ctrl", function ($scope, $http) {
                 $scope.state.page = 1;
             }
             $scope.update();
+            fazPopUp();
             document.body.scrollTop = document.documentElement.scrollTop = 200;
         }
         // Controles =================================
@@ -104,10 +108,34 @@ app.controller("Ctrl", function ($scope, $http) {
                 document.querySelector('.seta').classList.toggle('close-seta');
             }
         }
+
+
+
+        $scope.fechaPopUp = function () {
+
+        }
     })
 
     setTimeout(() => {
         $scope.update()
     }, 500);
+
+    function fazPopUp() {
+        setTimeout(() => {
+            let cli = document.querySelectorAll('.pokemons');
+            cli.forEach((cli) => {
+                cli.addEventListener('click', () => {
+                    let pop = document.querySelector('.popup-container')
+                    pop.classList.remove('some')
+                })
+            })
+        }, 1000)
+    }
+    fazPopUp();
+
+    $scope.closeando = function () {
+        let pop = document.querySelector('.popup-container')
+        pop.classList.add('some')
+    }
 
 })

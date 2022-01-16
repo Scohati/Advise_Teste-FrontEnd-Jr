@@ -201,7 +201,25 @@ body.darkActived {
   border-bottom: 1px solid #bdbdbd;
   margin-bottom: 20px;
   animation: aparece 1s;
+  cursor: pointer;
 }
+
+.pokemons:hover {
+  background-color: #ebebeb;
+}
+
+.pokemons:hover h4 {
+  color: #ff5800;
+}
+
+body.darkActived .pokemons:hover {
+  background-color: #545454;
+}
+
+body.darkActived .pokemons:hover h4 {
+  color: #ff5800;
+}
+
 .pokemons img {
   border: 1px solid black;
   width: 100px;
@@ -259,6 +277,80 @@ body.darkActived {
   width: 100%;
   height: 31px;
 }
+
+/* Aqui vai as configurações do menu PopUp */
+
+.popup-container {
+  position: fixed;
+  width: 90%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50px;
+  border: 5px solid #ff5800;
+
+  background-color: #0a0a0ae0;
+
+  overflow: auto;
+}
+
+.popup-container.some {
+  display: none;
+}
+
+.popup-container::-webkit-scrollbar {
+  width: 0px;
+}
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  color: #ff5800;
+  font-size: 30px;
+  cursor: pointer;
+}
+.close:hover {
+  color: #fff;
+}
+
+.poke-info {
+  color: #fff;
+  margin: 0 auto 60px auto;
+  border-bottom: 1px solid #ff5800;
+  padding-bottom: 10px;
+  max-width: 80%;
+  text-align: center;
+}
+
+.poke-evo {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.poke-start,
+.poke-middle,
+.poke-end {
+  color: #ff5800;
+  font-size: 3em;
+  margin: 0 20px 60px 20px;
+  text-align: center;
+}
+
+.poke-start img,
+.poke-middle img,
+.poke-end img {
+  border: 1px solid #d89c7b;
+  width: 130px;
+  border-radius: 20px;
+}
+
+/* Aqui acaba as config do popUp */
 
 @media screen and (max-width: 428px), (max-width: 703px) {
   .img-header {
